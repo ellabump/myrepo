@@ -2,7 +2,7 @@
 title: "Ella Is Learning to Use Github"
 author: "Ella Bump"
 date: "2024-03-06"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
