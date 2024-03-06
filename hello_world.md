@@ -3,33 +3,25 @@ Ella Is Learning to Use Github
 Ella Bump
 2024-03-06
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax
-for authoring HTML, PDF, and MS Word documents. For more details on
-using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that
-includes both content as well as the output of any embedded R code
-chunks within the document. You can embed an R code chunk like this:
+This sentence is…?
 
 ``` r
-summary(cars)
+packages <- c("tidyverse", "ggthemes", "GGally", "RColorBrewer", 
+              "viridis", "scales", "plotly", "patchwork", 
+              "sf", "tmap", "leaflet", "spsurvey")
+
+install.packages(setdiff(packages, rownames(installed.packages())))  
+lapply(packages, require, character.only = TRUE)
+
+# video 27:45
+
+# View the data ---------------------
+park_visits <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-09-17/national_parks.csv") # visits to US National Parks
+gas_price <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-09-17/gas_price.csv") # gas prices over space and time
+
+View(park_visits); summary(park_visits)
+View(gas_price); summary(gas_price)
+
+glimpse(park_visits); str(park_visits)
+min(park_visits$year)
 ```
-
-    ##      speed           dist       
-    ##  Min.   : 4.0   Min.   :  2.00  
-    ##  1st Qu.:12.0   1st Qu.: 26.00  
-    ##  Median :15.0   Median : 36.00  
-    ##  Mean   :15.4   Mean   : 42.98  
-    ##  3rd Qu.:19.0   3rd Qu.: 56.00  
-    ##  Max.   :25.0   Max.   :120.00
-
-## Including Plots
-
-You can also embed plots, for example:
-
-![](hello_world_files/figure-gfm/pressure-1.png)<!-- -->
-
-Note that the `echo = FALSE` parameter was added to the code chunk to
-prevent printing of the R code that generated the plot.

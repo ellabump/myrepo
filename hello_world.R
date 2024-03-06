@@ -1,13 +1,13 @@
----
-title: "Ella Is Learning to Use Github"
-author: "Ella Bump"
-date: "2024-03-06"
-output: github_document
----
+# ---
+# title: "Ella Is Learning to Use Github"
+# author: "Ella Bump"
+# date: "2024-03-06"
+# output: github_document
+# ---
 
-This sentence is...?
+# This sentence is...?
 
-```{r, eval=FALSE}
+#+ r setup, include = TRUE
 packages <- c("tidyverse", "ggthemes", "GGally", "RColorBrewer", 
               "viridis", "scales", "plotly", "patchwork", 
               "sf", "tmap", "leaflet", "spsurvey")
@@ -22,5 +22,4 @@ View(cars)
 summary(cars)
 plot(cars)
 
-```
 
