@@ -5,26 +5,26 @@ date: "2024-03-06"
 output: github_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+This sentence is...?
+
+```{r, eval=FALSE}
+packages <- c("tidyverse", "ggthemes", "GGally", "RColorBrewer", 
+              "viridis", "scales", "plotly", "patchwork", 
+              "sf", "tmap", "leaflet", "spsurvey")
+
+install.packages(setdiff(packages, rownames(installed.packages())))  
+lapply(packages, require, character.only = TRUE)
+
+# video 27:45
+
+# View the data ---------------------
+park_visits <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-09-17/national_parks.csv") # visits to US National Parks
+gas_price <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-09-17/gas_price.csv") # gas prices over space and time
+
+View(park_visits); summary(park_visits)
+View(gas_price); summary(gas_price)
+
+glimpse(park_visits); str(park_visits)
+min(park_visits$year)
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
